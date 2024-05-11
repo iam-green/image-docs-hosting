@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body {
+    background: linear-gradient(270deg, #28f365, #8b80f1, #44d1db);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0 50%}
+}
+
+.hor-c {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ver-c {
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.margin-10 {
+    margin:10px;
+}
+
+.no-margin {
+    margin:0;
+}
+
+.subtitle {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#image-preview {
+    border: 1px solid #000;
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+}
+
+#file-select {
+    padding: .5em .75em;
+    font-size: inherit;
+    font-family: inherit;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #f5f5f5;
+    border: 1px solid #ebebeb;
+    border-bottom-color: #e2e2e2;
+    border-radius: .25em;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#search-input, #link-input {
+    display: inline-block;
+    padding: .5em .75em;
+    font-size: inherit;
+    font-family: inherit;
+    text-align: center;
+    width:60%;
+    vertical-align: middle;
+    background-color: #f5f5f5;
+    border: 1px solid #ebebeb;
+    border-bottom-color: #e2e2e2;
+    border-radius: .25em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.submit {
+    display: inline-block;
+    padding: .5em .75em;
+    color: #fff;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: #337ab7;
+    cursor: pointer;
+    border: 1px solid #2e6da4;
+    border-radius: .25em;
+}
+
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
+}
+
+@media screen and (max-width:768px) {
+
+    #main-div {
+        flex-direction: column;
+        position: absolute;
+        width: 90%;
+        height: 70%;
+        background-color: #fff;
+        border-radius: 25px;
+    }
+
+    #title {
+        font-family: 'Patua One', cursive;
+        margin-top: 30px;
+        font-size: 2em;
+    }
+
+    .box {
+        width: 70%;
+        height: 27%;
+        border: 3px solid #000;
+        border-radius: 25px;
+        text-align: center;
+        margin-block: 20px;
+    }
+}
+
+@media screen and (min-width:769px) and (max-width: 1180px) {
+
+    #main-div {
+        flex-direction: column;
+        position: absolute;
+        width: 70%;
+        height: 60%;
+        background-color: #fff;
+        border-radius: 25px;
+    }
+
+    #title {
+        font-family: 'Patua One', cursive;
+        font-size: 50px;
+    }
+
+    .box {
+        width: 75%;
+        height: 25%;
+        border: 3px solid #000;
+        border-radius: 25px;
+        text-align: center;
+        margin-block: 20px;
+    }
+
+}
+
+@media ( min-width: 1181px ) {
+
+    #main-div {
+        flex-direction: column;
+        position: absolute;
+        width: 826px;
+        height: 60%;
+        background-color: #fff;
+        border-radius: 25px;
+    }
+
+    #title {
+        font-family: 'Patua One', cursive;
+        font-size: 50px;
+    }
+
+    .box {
+        width: 620px;
+        height: 25%;
+        border: 3px solid #000;
+        border-radius: 25px;
+        text-align: center;
+        margin-block: 20px;
+    }
+
+}

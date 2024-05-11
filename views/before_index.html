@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Image & Docs Upload</title>
+		<script>
+  			
+		</script>
+	</head>
+	<body>
+  	    <form action='result' method='POST' enctype="multipart/form-data">
+            <fieldset>
+                <input type='file' name='file' accept='image/gif,image/jpeg,image/png,image/bmp,.pdf,.hwp,.xls,.xlsx,.ppt,.pptx,.doc,.docx' required><br>
+		    	<input type='submit' value='업로드'>
+            </fieldset>
+		</form> 
+        <form action="result" method='POST'>
+            <fieldset>
+                <label>URL <input type="text" name="url" required></label>
+                <input type="submit" value="보내기">
+            </fieldset>
+        </form> 
+        <form action="search" method='GET'>
+            <fieldset>
+                <label>검색 <input type="search" name="query" required></label>
+                <input type="submit" value="검색">
+            </fieldset>
+        </form>
+	</body>
+</html>

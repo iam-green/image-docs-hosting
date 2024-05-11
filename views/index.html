@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Image & Docs Hosting</title>
+        <link rel="stylesheet" type="text/css" href="./css/index.css">
+        <script src='./js/index.js'></script>
+    </head>
+    <body>
+        <div id='main-div' class='flex-center hor-c ver-c'>
+            <h1 id='title'>Image & Docs Hosting</h1>
+<!--            <div id='search-box' class='flex-center flex-column box'>-->
+<!--                <h3 class='subtitle margin-10'>파일 검색</h3>-->
+<!--                <form action='search' method='get'>-->
+<!--                    <input id='search-input' name="query" placeholder='파일 이름 입력' required type="text">-->
+<!--                    <input id='search-button' type='submit' class='submit' value='검색'>-->
+<!--                </form>-->
+<!--            </div>-->
+            <div id='file-box' class='flex-center flex-column box'>
+                <h3 class='subtitle margin-10'>사진 & 문서 업로드</h3>
+                <form class='flex-center flex-row' action='result' method='POST' enctype="multipart/form-data">
+                    <image id='image-preview' hidden></image>
+                    <label for='file'><div id='file-select'>파일 선택</div></label>
+                    <input id='file-upload' type='submit' class='submit' value='업로드'>
+                    <input id='file' type='file' name='file' class='hidden' onchange='getFile()' accept='image/gif,image/jpeg,image/png,image/bmp,.pdf,.hwp,.xls,.xlsx,.ppt,.pptx,.doc,.docx' required>
+                </form>
+                <p id='file-name' class='no-margin' hidden>이름 : </p>
+            </div>
+            <div id='link-box' class='flex-center flex-column box'>
+                <h3 class='subtitle margin-10'>링크 줄이기</h3>
+                <form class='flex-center flex-row' action='result' method='POST'>
+                    <input id='link-input' type="text" name="url" placeholder='링크 입력' required>
+                    <input id='link-upload' type='submit' class='submit' value='업로드'>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

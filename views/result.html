@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Image & Docs Hosting</title>
+        <style>
+
+            @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+            body {
+                background: linear-gradient(270deg, #28f365, #8b80f1, #44d1db);
+                background-size: 600% 600%;
+
+                -webkit-animation: AnimationName 30s ease infinite;
+                -moz-animation: AnimationName 30s ease infinite;
+                animation: AnimationName 30s ease infinite;
+            }
+
+            @-webkit-keyframes AnimationName {
+                0%{background-position:0 50%}
+                50%{background-position:100% 50%}
+                100%{background-position:0 50%}
+            }
+            @-moz-keyframes AnimationName {
+                0%{background-position:0 50%}
+                50%{background-position:100% 50%}
+                100%{background-position:0 50%}
+            }
+            @keyframes AnimationName {
+                0%{background-position:0 50%}
+                50%{background-position:100% 50%}
+                100%{background-position:0 50%}
+            }
+
+            .hor-c {
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .ver-c {
+                top: 0;
+                bottom: 0;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+
+            .center {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .flex-column {
+                display: flex;
+                flex-direction: column;
+            }
+
+            h1 {
+                font-family: 'Patua One', cursive;
+            }
+
+            p {
+                font-family: 'Noto Sans KR', cursive;
+            }
+
+            .button_align {
+                display: flex;
+                flex-direction: row;
+            }
+
+            button {
+                display: inline-block;
+                padding: .5em .75em;
+                color: #fff;
+                font-size: inherit;
+                line-height: normal;
+                vertical-align: middle;
+                background-color: #337ab7;
+                cursor: pointer;
+                border: 1px solid #2e6da4;
+                border-radius: .25em;
+            }
+
+            .margin-5 {
+                margin: 5px;
+            }
+
+            @media screen and (max-width:768px) {
+
+                .button_align {
+                    flex-direction: column;
+                }
+
+                #main {
+                    position: absolute;
+                    width: 90%;
+                    height: 70%;
+                    background-color:#fff;
+                    border-radius: 25px;
+                }
+            }
+
+            @media screen and (min-width:769px) and (max-width: 1180px) {
+
+                #main {
+                    position: absolute;
+                    width: 50%;
+                    height: 50%;
+                    background-color:#fff;
+                    border-radius: 25px;
+                }
+
+            }
+
+            @media ( min-width: 1181px ) {
+
+                #main {
+                    position: absolute;
+                    width: 620px;
+                    height: 50%;
+                    background-color:#fff;
+                    border-radius: 25px;
+                }
+            
+            }
+
+        </style>
+        <script>
+            function copy() {
+                navigator.clipboard.writeText('<%=db.domain%><%=db.type!=="url"?"/info/":"/"%><%=db.id%>').then(()=>{
+                    alert('성공적으로 복사가 되었습니다.');
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div id='main' class='hor-c ver-c center flex-column'>
+            <h1>Success</h1>
+            <p>성공적으로 <%=db.type=='image'?'이미지':db.type=='docs'?'문서':'링크'%>가 업로드되었습니다.</p>
+            <div class='button_align'>
+                <button onclick='copy()' class='margin-5'>링크 복사</button>
+                <a href='<%=db.domain%><%=db.type!=="url"?"/info/":"/"%><%=db.id%>'><button class='margin-5'>링크 이동</button></a>
+                <% if(db.type!=='url') { %>
+                    <a href='<%=db.domain%>/<%=db.id%>' download><button class='margin-5'>다운로드</button></a>
+                <% } %>
+            </div>
+        </div>
+    </body>
+</html>
